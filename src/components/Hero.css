@@ -1,0 +1,57 @@
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.hero-meta {
+  margin: 18px 0;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+.btn.p {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn.p svg {
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.btn.p:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .hero-meta {
+    font-size: 13px;
+  }
+
+  .hero-tags {
+    gap: 8px;
+  }
+}

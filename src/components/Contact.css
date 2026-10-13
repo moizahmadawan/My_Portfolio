@@ -1,0 +1,542 @@
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+  padding: 90px 0 35px;
+  color: var(--tx, #141a33);
+  scroll-margin-top: 90px;
+}
+
+.contact-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.contact-heading {
+  max-width: 680px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  color: var(--ac, #b45309);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.contact-heading h2 {
+  margin: 14px 0;
+  font-size: clamp(32px, 5vw, 49px);
+  line-height: 1.15;
+  letter-spacing: -1.6px;
+  font-weight: 800;
+}
+
+.contact-heading h2 span {
+  color: var(--ac, #b45309);
+}
+
+.contact-heading > p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--mu, #535c80);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   MAIN CONTACT GRID
+========================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--ln, #c9d0e8);
+  border-radius: 22px;
+  background: var(--surf, #ffffff);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================================
+   LEFT CONTACT INFORMATION
+========================================= */
+
+.contact-info {
+  min-width: 0;
+  padding: 38px;
+  background: var(--surf2, var(--bg, #eef1fa));
+  border-right: 1px solid var(--ln, #c9d0e8);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  margin: 0 0 14px;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 750;
+  color: var(--tx, #141a33);
+}
+
+.contact-info-description {
+  margin: 0 0 30px;
+  color: var(--mu, #535c80);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Email and location rows */
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  margin: 22px 0;
+  padding: 13px 0;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+a.contact-info-item {
+  transition: color 0.2s ease;
+}
+
+a.contact-info-item:hover {
+  color: var(--ac, #b45309);
+}
+
+.contact-info-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ln, #c9d0e8);
+  border-radius: 12px;
+  background: var(--surf, #ffffff);
+  color: var(--ac, #b45309);
+  font-size: 19px;
+}
+
+.contact-info-text {
+  display: grid;
+  flex: 1;
+  gap: 5px;
+  min-width: 0;
+}
+
+.contact-info-text small {
+  color: var(--mu, #535c80);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.contact-info-text strong {
+  color: var(--tx, #141a33);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contact-info-arrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--mu, #535c80);
+  transition: transform 0.2s ease;
+}
+
+a.contact-info-item:hover .contact-info-arrow {
+  transform: translate(3px, -3px);
+  color: var(--ac, #b45309);
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.contact-socials {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ln, #c9d0e8);
+}
+
+.contact-socials h4 {
+  margin: 0 0 15px;
+  color: var(--tx, #141a33);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.contact-social-links a {
+  display: inline-grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--ln, #c9d0e8);
+  border-radius: 12px;
+  background: var(--surf, #ffffff);
+  color: var(--tx, #141a33);
+  font-size: 18px;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-social-links a:hover {
+  color: var(--ac, #b45309);
+  border-color: var(--ac, #b45309);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   RIGHT CONTACT FORM
+========================================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  padding: 38px;
+  background: var(--surf, #ffffff);
+}
+
+.contact-form h3 {
+  margin: 0;
+}
+
+.contact-form-description {
+  margin: -12px 0 4px;
+  color: var(--mu, #535c80);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.contact-form-group label {
+  color: var(--tx, #141a33);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid var(--ln, #c9d0e8);
+  border-radius: 10px;
+  outline: none;
+  background: var(--bg, #eef1fa);
+  color: var(--tx, #141a33);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-form-group input {
+  min-height: 48px;
+}
+
+.contact-form-group textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.contact-form-group input::placeholder,
+.contact-form-group textarea::placeholder {
+  color: var(--mu, #535c80);
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+  border-color: var(--ac, #b45309);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.13);
+}
+
+.contact-form-group input:disabled,
+.contact-form-group textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* =========================================
+   SEND MESSAGE BUTTON
+========================================= */
+
+.contact-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 2px;
+  padding: 13px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--ac, #b45309);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.contact-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.contact-submit svg {
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+/* =========================================
+   SUCCESS AND ERROR MESSAGES
+========================================= */
+
+.contact-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 14px;
+  border: 1px solid var(--ln, #c9d0e8);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.contact-status svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 17px;
+}
+
+.contact-status-success {
+  color: #15803d;
+  background: rgba(34, 197, 94, 0.09);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.contact-status-error {
+  color: #dc2626;
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* =========================================
+   PRIVACY NOTE
+========================================= */
+
+.contact-privacy-note {
+  margin: -7px 0 0;
+  color: var(--mu, #535c80);
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+.contact-social-links a:focus-visible,
+.contact-info-item:focus-visible,
+.contact-submit:focus-visible {
+  outline: 3px solid var(--ac, #b45309);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .contact-container {
+    width: min(100% - 32px, 720px);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    padding: 30px;
+    border-right: 0;
+    border-bottom: 1px solid var(--ln, #c9d0e8);
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 22px;
+  }
+
+  .contact-info-description {
+    max-width: 520px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 60px 0 28px;
+  }
+
+  .contact-container {
+    width: calc(100% - 28px);
+  }
+
+  .contact-heading {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(30px, 8vw, 39px);
+    letter-spacing: -1px;
+  }
+
+  .contact-heading > p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .contact-grid {
+    border-radius: 17px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 21px;
+  }
+
+  .contact-info-item {
+    gap: 11px;
+  }
+
+  .contact-info-text strong {
+    font-size: 12px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  .contact-form-group textarea {
+    min-height: 125px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .contact-container {
+    width: calc(100% - 22px);
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 21px 15px;
+  }
+
+  .contact-heading h2 {
+    font-size: 30px;
+  }
+
+  .contact-info-icon {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
+  }
+
+  .contact-info-arrow {
+    font-size: 14px;
+  }
+
+  .contact-social-links {
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section *,
+  .contact-section *::before,
+  .contact-section *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+

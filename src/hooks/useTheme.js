@@ -16,7 +16,7 @@ function readSaved() {
 
 /* Light/dark theme that follows the OS until the visitor picks one. */
 export function useTheme() {
-  const [theme, setTheme] = useState(readSaved);
+  const [theme, setTheme] = useState(() => readSaved() || "dark");
 
   useEffect(() => {
     const root = document.documentElement;

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-import './Contact.css';
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
@@ -16,9 +14,6 @@ import "./Contact.css";
 const EMAILJS_SERVICE_ID = "service_1eez7q4";
 const EMAILJS_TEMPLATE_ID = "template_zn4ntyq";
 const EMAILJS_PUBLIC_KEY = "D-nzA3lb7koL5t_uo";
-=======
-import { useState } from "react";
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
 
 export default function Contact() {
   const [values, setValues] = useState({
@@ -27,22 +22,17 @@ export default function Contact() {
     message: "",
   });
 
-<<<<<<< HEAD
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState({
     type: "",
     message: "",
   });
-=======
-  const [sent, setSent] = useState(false);
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
 
   const onChange = (field) => (e) => {
     setValues((prev) => ({
       ...prev,
       [field]: e.target.value,
     }));
-<<<<<<< HEAD
 
     if (status.message) {
       setStatus({ type: "", message: "" });
@@ -78,20 +68,18 @@ export default function Contact() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await emailjs.send(
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
           from_name: name,
           reply_to: email,
-          message: message,
+          message,
         },
         {
           publicKey: EMAILJS_PUBLIC_KEY,
         }
       );
-
-      console.log("EmailJS success:", response.status, response.text);
 
       setStatus({
         type: "success",
@@ -106,18 +94,11 @@ export default function Contact() {
     } catch (error) {
       console.error("EmailJS sending error:", error);
 
-      let errorMessage =
-        "Message could not be sent. Please try again.";
-
-      if (error?.text) {
-        errorMessage = `EmailJS error: ${error.text}`;
-      } else if (error?.message) {
-        errorMessage = `EmailJS error: ${error.message}`;
-      }
-
       setStatus({
         type: "error",
-        message: errorMessage,
+        message: error?.text
+          ? `EmailJS error: ${error.text}`
+          : "Message could not be sent. Please try again.",
       });
     } finally {
       setSending(false);
@@ -156,12 +137,10 @@ export default function Contact() {
               <span className="contact-info-icon">
                 <FiMail />
               </span>
-
               <span className="contact-info-text">
                 <small>Email</small>
                 <strong>moizahmad334455@gmail.com</strong>
               </span>
-
               <FiArrowUpRight className="contact-info-arrow" />
             </a>
 
@@ -169,7 +148,6 @@ export default function Contact() {
               <span className="contact-info-icon">
                 <FiMapPin />
               </span>
-
               <span className="contact-info-text">
                 <small>Location</small>
                 <strong>Gujrat, Pakistan</strong>
@@ -178,7 +156,6 @@ export default function Contact() {
 
             <div className="contact-socials">
               <h4>Connect with me</h4>
-
               <div className="contact-social-links">
                 <a
                   href="https://www.linkedin.com/in/malikmoizahmad/"
@@ -189,7 +166,6 @@ export default function Contact() {
                 >
                   <FaLinkedinIn />
                 </a>
-
                 <a
                   href="https://github.com/moizahmadawan"
                   target="_blank"
@@ -199,7 +175,6 @@ export default function Contact() {
                 >
                   <FaGithub />
                 </a>
-
                 <a
                   href="mailto:moizahmad334455@gmail.com"
                   aria-label="Email"
@@ -220,7 +195,6 @@ export default function Contact() {
 
             <div className="contact-form-group">
               <label htmlFor="contact-name">Your Name</label>
-
               <input
                 id="contact-name"
                 type="text"
@@ -237,7 +211,6 @@ export default function Contact() {
 
             <div className="contact-form-group">
               <label htmlFor="contact-email">Email Address</label>
-
               <input
                 id="contact-email"
                 type="email"
@@ -254,7 +227,6 @@ export default function Contact() {
 
             <div className="contact-form-group">
               <label htmlFor="contact-message">Your Message</label>
-
               <textarea
                 id="contact-message"
                 name="message"
@@ -283,7 +255,6 @@ export default function Contact() {
                 ) : (
                   <FiAlertCircle />
                 )}
-
                 <span>{status.message}</span>
               </div>
             )}
@@ -306,70 +277,3 @@ export default function Contact() {
     </section>
   );
 }
-
-
-=======
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
-  return (
-    <section id="contact">
-      <div className="wrap">
-        <h2>Let's work together</h2>
-        <p className="sub">Send a message and I will reply by email.</p>
-
-        <form onSubmit={onSubmit}>
-          <label>
-            Name
-            <input
-              value={values.name}
-              onChange={onChange("name")}
-              autoComplete="name"
-            />
-          </label>
-
-          <label>
-            Email
-            <input
-              type="email"
-              value={values.email}
-              onChange={onChange("email")}
-              autoComplete="email"
-            />
-          </label>
-
-          <label>
-            Message
-            <textarea
-              rows={4}
-              value={values.message}
-              onChange={onChange("message")}
-            />
-          </label>
-
-          <div>
-            <button className="btn p" type="submit">
-              Send message
-            </button>
-          </div>
-
-          {sent && (
-            <p id="ok" role="status">
-              Thanks! Your message has been sent.
-            </p>
-          )}
-        </form>
-
-        <p className="note">
-          <a href="https://github.com/Moizawan101" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/malikmoizahmad" target="_blank" rel="noreferrer">LinkedIn</a>
-        </p>
-      </div>
-    </section>
-  );
-}
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8

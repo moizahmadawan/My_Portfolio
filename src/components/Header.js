@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
@@ -20,19 +18,10 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#stack", label: "Tech stack" },
   { href: "#projects", label: "Projects" },
-=======
-import { useTheme } from "../hooks/useTheme";
-
-const links = [
-  { href: "#stack", label: "Tech stack" },
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
-<<<<<<< HEAD
   const { theme, toggle } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
@@ -41,13 +30,11 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
 
   const logo = theme === "dark" ? logoDark : logoLight;
-
   const isAllProjectsPage = location.pathname === "/projects";
 
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
-    // Keep Projects active on the complete projects page.
     if (isAllProjectsPage) {
       setActiveSection("#projects");
       return;
@@ -57,17 +44,16 @@ export default function Header() {
 
     const updateActiveSection = () => {
       const header = document.querySelector(".site-header");
-      const headerHeight = header?.offsetHeight ?? 56;
-      const activationLine = headerHeight + 100;
-
+      const activationLine = (header?.offsetHeight ?? 56) + 100;
       let currentSection = "";
 
       for (const id of sectionIds) {
         const section = document.getElementById(id);
 
-        if (!section) continue;
-
-        if (section.getBoundingClientRect().top <= activationLine) {
+        if (
+          section &&
+          section.getBoundingClientRect().top <= activationLine
+        ) {
           currentSection = `#${id}`;
         }
       }
@@ -142,8 +128,6 @@ export default function Header() {
     }
 
     setActiveSection(href);
-
-    // Allow normal hash navigation on the home page.
     window.location.hash = href;
   };
 
@@ -228,22 +212,6 @@ export default function Header() {
         >
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
-=======
-  const { toggle } = useTheme();
-
-  return (
-    <header>
-      <div className="wrap">
-        <a className="logo" href="#top">Moiz Ahmad Awan</a>
-        <nav aria-label="Main">
-          {links.map((l) => (
-            <a key={l.href} href={l.href}>{l.label}</a>
-          ))}
-          <button id="theme" type="button" aria-label="Toggle light or dark theme" onClick={toggle}>
-            Theme
-          </button>
-        </nav>
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
       </div>
     </header>
   );

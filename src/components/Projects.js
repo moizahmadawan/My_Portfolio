@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -14,7 +13,7 @@ import {
   FiX,
   FiFolder,
   FiArrowLeft,
-  FiLock ,
+  FiLock,
 } from "react-icons/fi";
 
 const categories = [
@@ -50,10 +49,7 @@ function ProjectCard({ project }) {
   };
 
   return (
-    <article
-      className="project-card"
-      id={`project-${project.id}`}
-    >
+    <article className="project-card" id={`project-${project.id}`}>
       <div className={`project-thumb ${project.thumbClass || ""}`}>
         {project.thumb ? (
           <img
@@ -67,15 +63,14 @@ function ProjectCard({ project }) {
             <span>{project.title}</span>
           </div>
         )}
-
-
       </div>
 
       <div className="project-body">
         <div className="project-meta">
           <span className="project-preview-label">
-          {project.type || project.category || "Project"}
-        </span>
+            {project.type || project.category || "Project"}
+          </span>
+
           <span className="project-type">
             {project.category}
           </span>
@@ -108,15 +103,15 @@ function ProjectCard({ project }) {
           >
             View Details <FiArrowUpRight />
           </Link>
- 
- 
+
           <div className="project-icon-actions">
-          {project.privacyType && (
-            <span className="project-private-badge">
-            <FiLock /> {project.privacyType}
-            </span>
-             )}    
-             {project.github && (
+            {project.privacyType && (
+              <span className="project-private-badge">
+                <FiLock /> {project.privacyType}
+              </span>
+            )}
+
+            {project.github && (
               <a
                 href={project.github}
                 target="_blank"
@@ -152,36 +147,6 @@ function ProjectCard({ project }) {
               <FiShare2 />
             </button>
           </div>
-=======
-import { projects } from "../data/projects";
-import type { Project } from "../types";
-
-function ProjectCard({ project }: { project: Project }) {
-  const { caseStudy: c } = project;
-  return (
-    <article className="card">
-      <div className={`thumb ${project.thumbClass}`} role="img" aria-label="Project preview" />
-      <div className="cb">
-        <h3>{project.title}</h3>
-        <p>{project.summary}</p>
-        <div className="tags">
-          {project.tags.map((t) => (
-            <span key={t}>{t}</span>
-          ))}
-        </div>
-        <details>
-          <summary>Case study</summary>
-          <div>
-            <b>Problem:</b> {c.problem}<br />
-            <b>Solution:</b> {c.solution}<br />
-            <b>Result:</b> {c.result}
-          </div>
-        </details>
-        <div className="links">
-          {project.links.map((l) => (
-            <a key={l.label} href={l.href}>{l.label}</a>
-          ))}
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
         </div>
       </div>
     </article>
@@ -189,7 +154,6 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
-<<<<<<< HEAD
   const location = useLocation();
 
   const isAllProjectsPage =
@@ -218,35 +182,32 @@ export default function Projects() {
 
   const limit = isMobile ? 3 : 4;
 
- 
   const filteredProjects = projects.filter((project) => {
     const type = (project.type || "").toLowerCase();
     const category = (project.category || "").toLowerCase();
 
-    
-const matchesCategory =
-  activeCategory === "All" ||
-  (activeCategory === "Website" &&
-    (type.includes("website") ||
-      type.includes("web application") ||
-      type.includes("web app") ||
-      type.includes("full-stack web") ||
-      type.includes("web development"))) ||
-  (activeCategory === "Mobile App" &&
-    (type.includes("mobile app") ||
-      type.includes("react native"))) ||
-  (activeCategory === "AI Project" &&
-    (type.includes("ai") ||
-      type.includes("artificial intelligence") ||
-      type.includes("computer vision") ||
-      type.includes("machine learning") ||
-      type.includes("face recognition") ||
-      (!type.includes("browser extension") &&
-        category.includes("ai project")))) ||
-  (activeCategory === "Browser Extension" &&
-    (type.includes("browser extension") ||
-      type.includes("extension")));
-
+    const matchesCategory =
+      activeCategory === "All" ||
+      (activeCategory === "Website" &&
+        (type.includes("website") ||
+          type.includes("web application") ||
+          type.includes("web app") ||
+          type.includes("full-stack web") ||
+          type.includes("web development"))) ||
+      (activeCategory === "Mobile App" &&
+        (type.includes("mobile app") ||
+          type.includes("react native"))) ||
+      (activeCategory === "AI Project" &&
+        (type.includes("ai") ||
+          type.includes("artificial intelligence") ||
+          type.includes("computer vision") ||
+          type.includes("machine learning") ||
+          type.includes("face recognition") ||
+          (!type.includes("browser extension") &&
+            category.includes("ai project")))) ||
+      (activeCategory === "Browser Extension" &&
+        (type.includes("browser extension") ||
+          type.includes("extension")));
 
     const searchableText = [
       project.title,
@@ -266,7 +227,6 @@ const matchesCategory =
 
     return matchesCategory && matchesSearch;
   });
-
 
   const visibleProjects = isAllProjectsPage
     ? filteredProjects
@@ -429,18 +389,6 @@ const matchesCategory =
             </Link>
           </div>
         )}
-=======
-  return (
-    <section id="projects">
-      <div className="wrap">
-        <h2>Projects</h2>
-        <p className="sub">Sample cards — replace the text, tags and links with your real projects.</p>
-        <div className="grid">
-          {projects.map((p) => (
-            <ProjectCard key={p.id} project={p} />
-          ))}
-        </div>
->>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
       </div>
     </section>
   );

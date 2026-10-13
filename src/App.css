@@ -321,27 +321,7 @@ h1 span:nth-child(3) i {
   border-color: var(--tx);
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 16px 14px;
-}
 
-.chip {
-  display: inline-block;
-  font-family: var(--m);
-  font-size: 14px;
-  padding: 7px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--ln);
-  background: var(--bg);
-  color: var(--tx);
-}
-
-.chip:hover {
-  border-color: var(--ac);
-}
 
 /* Projects */
 .grid {

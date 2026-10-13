@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './About.css'
 import profileImage from "../assets/profile.jpeg";
 
@@ -8,11 +9,15 @@ const education = [
     text: "University of Gujrat, Pakistan",
   },
 ];
+=======
+import { timeline } from "../data/projects";
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
 
 export default function About() {
   return (
     <section id="about">
       <div className="wrap">
+<<<<<<< HEAD
         <h2>About Me</h2>
 
 
@@ -50,8 +55,24 @@ I’m a passionate Computer Science graduate and Full Stack Developer dedicated 
     </div>
   </div>
 </div>
+=======
+        <h2>About</h2>
+        <p className="sub">Web and mobile development, with AI tools in my daily workflow.</p>
+        <ol className="tl">
+          {timeline.map((item) => (
+            <li key={item.title}>
+              <small>{item.when}</small>
+              <b>{item.title}</b>
+              {item.text}
+            </li>
+          ))}
+        </ol>
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
       </div>
     </section>
   );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8

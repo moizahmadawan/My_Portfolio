@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './Contact.css';
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -15,6 +16,9 @@ import "./Contact.css";
 const EMAILJS_SERVICE_ID = "service_1eez7q4";
 const EMAILJS_TEMPLATE_ID = "template_zn4ntyq";
 const EMAILJS_PUBLIC_KEY = "D-nzA3lb7koL5t_uo";
+=======
+import { useState } from "react";
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
 
 export default function Contact() {
   const [values, setValues] = useState({
@@ -23,17 +27,22 @@ export default function Contact() {
     message: "",
   });
 
+<<<<<<< HEAD
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState({
     type: "",
     message: "",
   });
+=======
+  const [sent, setSent] = useState(false);
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
 
   const onChange = (field) => (e) => {
     setValues((prev) => ({
       ...prev,
       [field]: e.target.value,
     }));
+<<<<<<< HEAD
 
     if (status.message) {
       setStatus({ type: "", message: "" });
@@ -299,3 +308,68 @@ export default function Contact() {
 }
 
 
+=======
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setSent(true);
+  };
+
+  return (
+    <section id="contact">
+      <div className="wrap">
+        <h2>Let's work together</h2>
+        <p className="sub">Send a message and I will reply by email.</p>
+
+        <form onSubmit={onSubmit}>
+          <label>
+            Name
+            <input
+              value={values.name}
+              onChange={onChange("name")}
+              autoComplete="name"
+            />
+          </label>
+
+          <label>
+            Email
+            <input
+              type="email"
+              value={values.email}
+              onChange={onChange("email")}
+              autoComplete="email"
+            />
+          </label>
+
+          <label>
+            Message
+            <textarea
+              rows={4}
+              value={values.message}
+              onChange={onChange("message")}
+            />
+          </label>
+
+          <div>
+            <button className="btn p" type="submit">
+              Send message
+            </button>
+          </div>
+
+          {sent && (
+            <p id="ok" role="status">
+              Thanks! Your message has been sent.
+            </p>
+          )}
+        </form>
+
+        <p className="note">
+          <a href="https://github.com/Moizawan101" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/malikmoizahmad" target="_blank" rel="noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+  );
+}
+>>>>>>> a8c4e0d019c8d133d6dcd5937eb37625b816c5a8
